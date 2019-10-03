@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "postgres",
+    "host": "34.67.113.172",
+    "dialect": "postgresql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "postgres",
+    "password": "root",
+    "database": "postgres",
+    "host": "34.67.113.172",
+    "dialect": "postgresql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "postgres",
+    "host": "34.67.113.172",
+    "dialect": "postgresql",
+    "operatorsAliases": false
+  }
+}
