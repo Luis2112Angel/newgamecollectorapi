@@ -258,7 +258,7 @@ paths:
           schema:
             $ref: "#/definitions/ErrorResponse"
             
-  /pokemones:
+  /pokemons:
     x-swagger-router-controller: pokemon.controller
     get:
       description: get the pokemon list
@@ -299,7 +299,7 @@ paths:
           in: query  
           type: string
           required: false          
-      operationId: getPokemones
+      operationId: getPokemons
       responses:
         "200":
           description: Success
@@ -328,7 +328,7 @@ paths:
           schema:
             $ref: "#/definitions/ErrorResponse"
 
-  /pokemones/{id}:
+  /pokemons/{id}:
     x-swagger-router-controller: pokemon.controller
 
     get:
@@ -431,7 +431,7 @@ definitions:
     properties:
       name:
         type: string
-        description: Name of the game
+        description: Name of the pokemon
       des:
         type: string
         description: Description of the pokemon
@@ -538,9 +538,9 @@ definitions:
           
   GetPokemonListResponse:
     required:
-      - pokemones
+      - pokemons
     properties:
-      pokemones:
+      pokemons:
         type: array
         items:
           $ref: "#/definitions/GetPokemonResponse"

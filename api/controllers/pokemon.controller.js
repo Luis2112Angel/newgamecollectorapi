@@ -1,7 +1,7 @@
 'use strict';
 
 var controllerHelper = require('../helpers/controller.helper');
-const {Pokemones} = require('../models');
+const {Pokemons} = require('../models');
 
 // Module Name
 const MODULE_NAME = '[Pokemon Controller]';
@@ -10,17 +10,17 @@ const P_CT_ERR_POKEMON_NOT_FOUND = 'Pokemon not found';
 // Success Messages
 const P_CT_DELETED_SUCCESSFULLY = 'Pokemon deleted successfully';
 
-function getPokemones(req, res) {
+function getPokemons(req, res) {
     try {
 
-        Pokemones.findAll()
+        Pokemons.findAll()
             .then(pokemonList => res.status(200).send(pokemonList))
             .catch(error => res.status(500).send(error));
 
     } catch (error) {
         console.log("Was an error");
         console.log(error);
-        controllerHelper.handleErrorResponse(MODULE_NAME, getPokemones.name, error, res);
+        controllerHelper.handleErrorResponse(MODULE_NAME, getPokemons.name, error, res);
     }
 }
 
@@ -35,7 +35,7 @@ function createPokemon(req, res) {
 
         var parameters = req.body;
 
-        return Pokemones.create({
+        return Pokemons.create({
             name: parameters.name,
             des: parameters.des,
             imageLink: parameters.imageLink,
@@ -58,7 +58,7 @@ function getPokemonById(req, res) {
 
         var id = req.swagger.params.id.value;
 
-        Pokemones.findByPk(id)
+        Pokemons.findByPk(id)
             .then(pokemon => res.status(200).send(pokemon));
 
     } catch (error) {
@@ -76,7 +76,7 @@ function deletePokemon(req, res) {
 
     var id = req.swagger.params.id.value;
 
-    Pokemones.findByPk(id).then(pokemon => {
+    Pokemons.findByPk(id).then(pokemon => {
         if (!pokemon) {
             res.status(200).send({"success": 0, "description": "not found !"});
         } else {
@@ -99,7 +99,7 @@ function updatePokemon(req, res) {
         var id = req.swagger.params.id.value;
         var parameters = req.body;
 
-        Pokemones.findByPk(id).then(pokemon => {
+        Pokemons.findByPk(id).then(pokemon => {
             if (!pokemon) {
                 res.status(401).send(({}));
             }
@@ -123,7 +123,7 @@ function updatePokemon(req, res) {
 
 module.exports =
 {
-        getPokemones,
+        getPokemons,
         getPokemonById,
         createPokemon,
         updatePokemon,
