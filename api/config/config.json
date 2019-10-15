@@ -3,7 +3,7 @@
     "username": "postgres",
     "password": "postgres",
     "database": "pokemonapi",
-    "host": "34.67.113.172",
+    "host": "35.224.96.93",
     "dialect": "postgresql",
     "operatorsAliases": false
   },
@@ -11,7 +11,7 @@
     "username": "postgres",
     "password": "root",
     "database": "postgres",
-    "host": "34.67.113.172",
+    "host": "35.224.96.93",
     "dialect": "postgresql",
     "operatorsAliases": false
   },
@@ -19,7 +19,7 @@
     "username": "postgres",
     "password": "postgres",
     "database": "pokemonapi",
-    "host": "34.67.113.172",
+    "host": "35.224.96.93",
     "dialect": "postgresql",
     "operatorsAliases": false
   }
